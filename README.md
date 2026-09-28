@@ -4,7 +4,7 @@ Réseau simulé sous Cisco Packet Tracer : trois sites reliés par des liaisons 
 
 Réalisé dans le cadre d'une SAE réseau du BUT Informatique.
 
-![Topologie](docs/topologie.svg)
+![Topologie dans Packet Tracer](docs/topologie.png)
 
 ## En bref
 
