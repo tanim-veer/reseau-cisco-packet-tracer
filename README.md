@@ -73,6 +73,24 @@ Les postes à adresse fixe sont placés hors de toutes les plages DHCP, pour qu'
 | Poste fixe | `ping 10.1.5.254` depuis PC-NonDHCP1 | réponses |
 | Chemin de secours | couper la liaison R0 ↔ R4, puis `tracert 10.1.4.254` depuis le LAN 0 | le trafic passe par R5 |
 
+## Captures
+
+**Attribution DHCP** : M1 reçoit automatiquement son adresse, sa passerelle (10.1.0.254) et son serveur DNS (10.1.0.251).
+
+![Configuration IP de M1 obtenue par DHCP](docs/captures/dhcp-m1.png)
+
+**Routage entre sites** : ping depuis M2 (LAN 4) vers un serveur du LAN 0. TTL=126 : le paquet a traversé 2 routeurs.
+
+![Ping de M2 vers 10.1.0.252](docs/captures/ping-m2.png)
+
+**Navigateur web** de M2 vers un serveur du LAN 0.
+
+![Navigateur web de M2](docs/captures/navigateur-m2.png)
+
+**Service DNS** : enregistrement A de `www.projet-reseau.fr`. Capture prise avant les corrections, quand l'enregistrement pointait encore vers 10.1.0.253 (voir plus bas).
+
+![Enregistrement DNS de www.projet-reseau.fr](docs/captures/dns.png)
+
 ## Corrections apportées à la version finale
 
 Une relecture complète de la configuration a mis en évidence plusieurs erreurs, corrigées dans `reseau.pkt` :
